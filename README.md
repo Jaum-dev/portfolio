@@ -46,22 +46,8 @@ Em `portifolio.html`, copie um dos blocos `<div class="col-md-6">...</div>`
 inteiro e ajuste o título, as tecnologias (`<span class="tag-tech">`), a
 descrição e o link do repositório.
 
-## Navegação: várias páginas, não uma "página única"
-
-Optei por manter o site em páginas HTML separadas (multi-page), em vez de
-uma única página com pop-ups simulando navegação. É a abordagem mais
-simples de manter para quem está começando: cada página é um arquivo
-independente e você pode editar uma sem risco de quebrar as outras. O
-único "pop-up" real do site é o formulário de contato, que fica bem no
-lugar como um modal.
-
 ## Rodando localmente
 
 Não precisa de nenhuma instalação. Basta abrir `index.html` no navegador,
 ou usar uma extensão como "Live Server" no VS Code para recarregar
 automaticamente a cada alteração.
-
----
-
-Criado inicialmente para a cadeira de Desenvolvimento Web na Uninter,
-reconstruído para uso profissional na divulgação de projetos e contato.
