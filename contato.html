@@ -1,89 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - João Victor</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - João Victor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-<div class="container-papel">
-    <div class="grid">
-        <nav class="menu-container">
-            <div id="btn-menu" class="hamburguer">☰</div> 
-            <ul id="menu-lista" class="lista-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portifolio.html">Portfólio</a></li>
-                <li><a href="sobreMim.html">Sobre Mim</a></li>
-                <li><a href="formacao.html">Formação</a></li>
-            </ul>
-        </nav>
 
-        <div class="cabecalho">
-            <h1 class="nome">Vamos<span><br>Conversar</span></h1>
-            <p class="txt-medio">Sinta-se à vontade para entrar em contato</p>
-        </div>
-
-        <div class="area-principal">
-            <h3 class="titulo1">Canais de Contato</h3>
-            <p class="txt-grande">Estou aberto a oportunidades de estágio, projetos freelances ou apenas para trocar uma ideia sobre a área de TI.</p>
-            
-            <div class="contato-links">
-                <div class="contato-item">
-                    <h4 class="txt-grande">E-mail</h4>
-                    <p class="txt-medio">Jaum.dev@outlook.com</p>
-                </div>
-
-                <div class="contato-item">
-                    <h4 class="txt-grande">LinkedIn</h4>
-                    <p class="txt-medio"><a href="https://www.linkedin.com/in/joao-victor-sousa-costa" target="_blank" style="color: #959595;">/in/joao-victor-sousa-costa</a></p>
-                </div>
-                <div class="contato-item">
-                    <h4 class="txt-grande">GitHub</h4>
-                    <p class="txt-medio"><a href="https://github.com/Jaum-dev" target="_blank" style="color: #959595;">/Jaum-dev</a></p>
-                </div>
-                
-                <button id="abrir-form" class="btn-dourado" style="margin-top: 20px; cursor: pointer;">Enviar Mensagem Direta</button>
-                <div id="modal-contato" class="modal">
-                    <div class="modal-content">
-                        <span class="fechar-modal">&times;</span>
-                        <h3 style="margin-top: 0;">Mande uma mensagem</h3>
-                        
-                        <form id="form-contato">
-                            <div class="campo">
-                                <label for="nome">Nome:</label>
-                                <input type="text" id="nome" placeholder="Seu nome completo">
-                            </div>
-                            
-                            <div class="campo">
-                                <label for="email">E-mail:</label>
-                                <input type="email" id="email" placeholder="usuario@dominio.com">
-                            </div>
-                            
-                            <div class="campo">
-                                <label for="mensagem">Mensagem:</label>
-                                <textarea id="mensagem" rows="4" placeholder="Como posso ajudar?"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn-dourado" style="width: 100%;">Enviar Agora</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="barra-lateral">
-            <div>
-                <h3>Localização</h3>
-                <p class="txt-medio">Fortaleza - CE<br>Brasil</p>
-            </div>
-
-        </div>
-
+  <nav class="navbar navbar-expand-md navbar-portfolio sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">João Victor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-lista" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu-lista">
+        <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portifolio.html">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="sobreMim.html">Sobre Mim</a></li>
+          <li class="nav-item"><a class="nav-link" href="formacao.html">Formação</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+          <li class="nav-item mt-2 mt-md-0">
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar para modo claro">🌙</button>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
-<script src="script.js"></script>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">fale comigo</p>
+      <h1>Vamos<br>Conversar</h1>
+      <p class="subtitulo">Sinta-se à vontade para entrar em contato</p>
+    </section>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <h3 class="titulo1">Canais de Contato</h3>
+        <p class="fs-5">
+          Estou aberto a oportunidades de estágio, projetos freelances ou apenas
+          para trocar uma ideia sobre a área de TI.
+        </p>
+
+        <div class="card-portfolio">
+          <h4>E-mail</h4>
+          <p class="mb-0"><a href="mailto:Jaum.dev@outlook.com">Jaum.dev@outlook.com</a></p>
+        </div>
+        <div class="card-portfolio">
+          <h4>LinkedIn</h4>
+          <p class="mb-0"><a href="https://www.linkedin.com/in/joao-victor-sousa-costa" target="_blank">/in/joao-victor-sousa-costa</a></p>
+        </div>
+        <div class="card-portfolio">
+          <h4>GitHub</h4>
+          <p class="mb-0"><a href="https://github.com/Jaum-dev" target="_blank">/Jaum-dev</a></p>
+        </div>
+        <div class="card-portfolio">
+          <h4>Whatsapp</h4>
+          <p class="mb-0"><a href="https://wa.me/5585997731552" target="_blank">/5585997731552</a></p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card-portfolio">
+          <h3>Localização</h3>
+          <p class="mb-0">Fortaleza — CE<br>Brasil</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-portfolio">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; 2026 João Victor Sousa Costa</span>
+      <div>
+        <a href="https://github.com/Jaum-dev" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/joao-victor-sousa-costa" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="mailto:Jaum.dev@outlook.com"><i class="bi bi-envelope"></i> E-mail</a>
+        <a href="https://wa.me/5585997731552" target="_blank"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================== MODAL DE CONTATO ======================
+      Estrutura padrão do Bootstrap para modal. tabindex="-1" e os
+      atributos aria-* são para acessibilidade (leitores de tela). -->
+  <div class="modal fade" id="modal-contato" tabindex="-1" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-contato-titulo">Mande uma mensagem</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="form-contato" novalidate>
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" id="nome" class="form-control" placeholder="Seu nome completo">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail</label>
+              <input type="email" id="email" class="form-control" placeholder="usuario@dominio.com">
+            </div>
+            <div class="mb-3">
+              <label for="mensagem" class="form-label">Mensagem</label>
+              <textarea id="mensagem" class="form-control" rows="4" placeholder="Como posso ajudar?"></textarea>
+            </div>
+            <button type="submit" class="btn-dourado w-100">Enviar Agora</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

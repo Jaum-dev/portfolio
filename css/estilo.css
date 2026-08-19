@@ -1,0 +1,364 @@
+/* ==========================================================================
+   ESTILO.CSS
+   Este arquivo tem 3 partes bem separadas, nessa ordem:
+   1) VARIÁVEIS DE TEMA  -> as cores do site (modo escuro e modo claro)
+   2) BASE                -> regras gerais (fonte, fundo, links...)
+   3) COMPONENTES         -> navbar, botões, cards, formulário, footer
+
+   Dica de manutenção: se quiser mudar uma cor do site inteiro, quase
+   sempre você só precisa mexer na PARTE 1 (variáveis). O resto do
+   arquivo usa essas variáveis, então a mudança se propaga sozinha.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1) VARIÁVEIS DE TEMA
+   -----------------------------------------------------------------------
+   Uma "variável CSS" é um valor com nome, definido dentro de --nome: valor;
+   Depois usamos var(--nome) em qualquer lugar do arquivo.
+
+   O tema ESCURO é o padrão, então suas variáveis ficam em :root
+   (a "raiz" do documento, ou seja, valem para o site inteiro).
+
+   O tema CLARO só existe quando a tag <html> tem o atributo
+   data-theme="light". É o JavaScript (js/script.js) quem adiciona ou
+   remove esse atributo quando o usuário clica no botão de tema.
+   ========================================================================== */
+
+:root {
+  /* Fundo (do mais escuro para o mais claro) */
+  --bg: #0d0d0d;
+  --bg-elevado: #161616;
+  --bg-elevado-2: #1f1f1f;
+
+  /* Texto */
+  --texto: #ededed;
+  --texto-suave: #9a9a9a;
+
+  /* Cor de destaque (dourado) e variações dela */
+  --destaque: #d4af37;
+  --destaque-suave: rgba(212, 175, 55, 0.12);
+  --borda: rgba(212, 175, 55, 0.25);
+
+  /* Sombra do texto dourado (o "brilho" nos títulos) */
+  --sombra-destaque: 0 2px 10px rgba(212, 175, 55, 0.25);
+
+  /* Fontes: display = títulos grandes | corpo = texto normal | mono = detalhes técnicos */
+  --fonte-display: "Playfair Display", "Times New Roman", serif;
+  --fonte-corpo: "Inter", -apple-system, Segoe UI, sans-serif;
+  --fonte-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+/* Tema claro: repetimos as mesmas variáveis com outros valores.
+   Como o resto do CSS só lê var(--algo), nada mais precisa mudar. */
+[data-theme="light"] {
+  --bg: #f7f5f0;
+  --bg-elevado: #ffffff;
+  --bg-elevado-2: #efece4;
+
+  --texto: #1c1c1c;
+  --texto-suave: #5c5c5c;
+
+  --destaque: #9c6f0b;
+  --destaque-suave: rgba(156, 111, 11, 0.1);
+  --borda: rgba(156, 111, 11, 0.3);
+
+  --sombra-destaque: 0 2px 10px rgba(156, 111, 11, 0.12);
+}
+
+
+/* ==========================================================================
+   2) BASE
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  line-height: 1.6;
+  /* Transição suave ao trocar de tema, em vez de a cor "piscar" */
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-display);
+  color: var(--destaque);
+}
+
+a {
+  color: var(--destaque);
+}
+
+a:hover {
+  color: var(--destaque);
+  opacity: 0.8;
+}
+
+/* Foco visível no teclado (acessibilidade: quem navega com Tab precisa ver
+   onde está). Sem isso, pessoas que não usam mouse ficam "perdidas" no site. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+/* Respeita quem pede menos animação no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.eyebrow {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--destaque);
+  text-transform: lowercase;
+}
+
+.eyebrow::before {
+  content: "> ";
+}
+
+.papel {
+  background-color: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+
+
+/* ==========================================================================
+   3) COMPONENTES
+   ========================================================================== */
+
+/* --- Navbar --- */
+.navbar-portfolio {
+  background-color: var(--bg-elevado);
+  border-bottom: 1px solid var(--borda);
+}
+
+.navbar-portfolio .navbar-brand {
+  font-family: var(--fonte-display);
+  color: var(--destaque) !important;
+  font-weight: 700;
+}
+
+.navbar-portfolio .nav-link {
+  color: var(--texto) !important;
+  font-family: var(--fonte-mono);
+  font-size: 0.95rem;
+}
+
+.navbar-portfolio .nav-link.active {
+  color: var(--destaque) !important;
+}
+
+.navbar-portfolio .navbar-toggler {
+  border-color: var(--borda);
+}
+
+/* Botão de trocar tema (ícone sol/lua) */
+.btn-tema {
+  background: transparent;
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--destaque);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-tema:hover {
+  transform: rotate(15deg);
+}
+
+/* --- Hero (cabeçalho de cada página) --- */
+.hero {
+  padding: 4.5rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  text-shadow: var(--sombra-destaque);
+  margin-bottom: 0.5rem;
+}
+
+.hero .subtitulo {
+  color: var(--texto-suave);
+  font-size: 1.15rem;
+}
+
+/* --- Botões --- */
+.btn-dourado {
+  background-color: var(--destaque);
+  border: 2px solid var(--destaque);
+  color: var(--bg);
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-dourado:hover {
+  background-color: transparent;
+  color: var(--destaque);
+  transform: translateY(-2px);
+}
+
+.btn-vazado {
+  background-color: transparent;
+  border: 2px solid var(--destaque);
+  color: var(--destaque);
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.btn-vazado:hover {
+  background-color: var(--destaque);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+/* --- Cards genéricos (usados em Sobre Mim, Formação, Contato) --- */
+.card-portfolio {
+  background-color: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--destaque);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card-portfolio:hover {
+  transform: translateX(6px);
+  border-left-color: var(--texto-suave);
+}
+
+.card-portfolio h3,
+.card-portfolio h4 {
+  margin-top: 0;
+}
+
+.card-portfolio .data {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+/* Selos de tecnologia (ex: "Python", "Pandas") */
+.tag-tech {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  background-color: var(--destaque-suave);
+  color: var(--destaque);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  padding: 0.15rem 0.55rem;
+  margin: 0 0.3rem 0.3rem 0;
+}
+
+.lista-limpa {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.lista-limpa li {
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--borda);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.lista-limpa li:last-child {
+  border-bottom: none;
+}
+
+.lista-limpa li:hover {
+  color: var(--destaque);
+  transform: translateX(4px);
+}
+
+/* --- Formulário de contato (dentro do modal Bootstrap) --- */
+.modal-content {
+  background-color: var(--bg-elevado);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+}
+
+.modal-header,
+.modal-footer {
+  border-color: var(--borda);
+}
+
+/* O "X" de fechar do Bootstrap é escuro por padrão (bom pro modo claro).
+   No modo escuro, precisamos clareá-lo pra ele ficar visível no fundo escuro. */
+.modal-content .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[data-theme="light"] .modal-content .btn-close {
+  filter: none;
+}
+
+.form-label {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  color: var(--destaque);
+}
+
+.form-control {
+  background-color: var(--bg);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+}
+
+.form-control:focus {
+  background-color: var(--bg);
+  color: var(--texto);
+  border-color: var(--destaque);
+  box-shadow: 0 0 0 0.2rem var(--destaque-suave);
+}
+
+.form-control::placeholder {
+  color: var(--texto-suave);
+}
+
+/* --- Footer --- */
+.footer-portfolio {
+  border-top: 1px solid var(--borda);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.footer-portfolio a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.footer-portfolio a:hover {
+  color: var(--destaque);
+}

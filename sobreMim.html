@@ -1,62 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mim - João Victor</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim - João Victor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <div class="container-papel">
-    <div class="grid">
 
-        <nav class="menu-container">
-            <div id="btn-menu" class="hamburguer">☰</div> 
-            <ul id="menu-lista" class="lista-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portifolio.html">Portfólio</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="formacao.html">Formação</a></li>
-        </nav>
-
-        <div class="cabecalho">
-        <h1 class="nome">João<span><br>Victor</span></h1>
-        <p class="txt-medio">Cientista de dados em formação</p>
-        </div>
-        <div class="area-principal">
-            <h3 class="titulo1">Apresentação</h3>
-            <p class="txt-grande">Sou João Victor Sousa Costa, tenho 22 anos, sou de Fortaleza-CE e estudo ciência da computação na universidade Uninter.<br> Possuo interesse em áreas como back-end e ánalise de dados. Possuo como hobby jogar no computador e escutar música.<br> Sou uma pessoa com fome de conhecimento e estou sempre estudando coisas novas, tanto da minha área quanto de coisas que eu gosto.</p>
-        </div>
-
-        <div class="barra-lateral">
-
-            <div class="habilidades">
-                <h3>Habilidades</h3>
-                <ul class="lista-generica txt-medio">
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>Java</li>
-                    <li>SQL (mySQL)</li>
-                    <li>API`s REST</li>
-                </ul>
-            </div>
-
-        </div>
-        <div class="sessao-inferior">
-        <h3>Experiência</h3>
-            <h4 style="margin-bottom: 0; padding-bottom: 0;" class="txt-grande">
-            Ks informática - Auxiliar técnico em informática
-            </h4>
-            <p class="data">Jan 2025 - Presente</p>
-            <ul class="lista-generica txt-grande">
-                <li>Diagnostico e resolução de problemas técnicos</li>
-                <li>Montagem e manutenção de computadores</li>
-                <li>Suporte técnico a usuários</li>
-                <li>Instalação de softwares e sistemas operacionais</li>
-            </ul>
-        </div>
+  <nav class="navbar navbar-expand-md navbar-portfolio sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">João Victor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-lista" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu-lista">
+        <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portifolio.html">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="sobreMim.html">Sobre Mim</a></li>
+          <li class="nav-item"><a class="nav-link" href="formacao.html">Formação</a></li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          <li class="nav-item mt-2 mt-md-0">
+            <button id="btn-tema" class="btn-tema" aria-label="Mudar para modo claro">🌙</button>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
-<script src="script.js"></script>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">quem sou eu</p>
+      <h1>João<br>Victor</h1>
+      <p class="subtitulo">Cientista de dados em formação</p>
+    </section>
+
+    <div class="row g-4">
+      <!-- Bloco de apresentação -->
+      <div class="col-lg-8">
+        <h3 class="titulo1">Apresentação</h3>
+        <p class="fs-5">
+          Sou João Victor Sousa Costa, tenho 22 anos, sou de Fortaleza-CE e estudo
+          ciência da computação na universidade Uninter.
+        </p>
+        <p class="fs-5">
+          Possuo interesse em áreas como back-end e análise de dados. Minha vontade é futuramente se tornar um ciêntista de dados. 
+          Possuo como hobby jogar no computador e escutar música.
+        </p>
+        <p class="fs-5">
+          Sou uma pessoa com fome de conhecimento e estou sempre estudando coisas
+          novas, tanto da minha área quanto de coisas que eu gosto.
+        </p>
+
+        <h3 class="titulo1 mt-5">Experiência</h3>
+        <div class="card-portfolio">
+          <h4>Ks Informática — Auxiliar técnico em informática</h4>
+          <p class="data">Jan 2025 — Presente</p>
+          <ul class="lista-limpa fs-6">
+            <li>Diagnóstico e resolução de problemas técnicos</li>
+            <li>Montagem e manutenção de computadores</li>
+            <li>Suporte técnico a usuários</li>
+            <li>Instalação de softwares e sistemas operacionais</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Barra lateral de habilidades -->
+      <div class="col-lg-4">
+        <div class="card-portfolio">
+          <h3>Habilidades</h3>
+          <span class="tag-tech">Java</span>
+          <span class="tag-tech">SQL (MySQL e Oracle)</span>
+          <span class="tag-tech">Spring Boot</span>
+          <span class="tag-tech">Postman</span>
+          <span class="tag-tech">Python</span>
+          <span class="tag-tech">Pandas</span>
+          <span class="tag-tech">NumPy</span>
+          <span class="tag-tech">Matplotlib</span>
+          <span class="tag-tech">Seaborn</span>
+          <span class="tag-tech">APIs REST</span>
+          <span class="tag-tech">JavaScript</span>
+          <span class="tag-tech">HTML5</span>
+          <span class="tag-tech">CSS3</span>
+          <span class="tag-tech">Excel</span>
+          <span class="tag-tech">Git</span>
+          <span class="tag-tech">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-portfolio">
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; 2026 João Victor Sousa Costa</span>
+      <div>
+        <a href="https://github.com/Jaum-dev" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/joao-victor-sousa-costa" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a href="mailto:Jaum.dev@outlook.com"><i class="bi bi-envelope"></i> E-mail</a>
+        <a href="https://wa.me/5585997731552" target="_blank"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
