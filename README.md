@@ -11,7 +11,7 @@ portfolio/
 ├── index.html        → Home
 ├── sobreMim.html      → Sobre Mim
 ├── formacao.html       → Formação
-├── portifolio.html      → Projetos
+├── portfolio.html      → Projetos
 ├── contato.html         → Contato (com formulário em modal)
 ├── css/
 │   └── estilo.css      → Todo o visual do site (cores, tema, componentes)
@@ -42,7 +42,7 @@ topo do `estilo.css` (parte 1 do arquivo). Não precisa mexer em mais nada.
 
 ## Como adicionar um novo projeto ao Portfólio
 
-Em `portifolio.html`, copie um dos blocos `<div class="col-md-6">...</div>`
+Em `portfolio.html`, copie um dos blocos `<div class="col-md-6">...</div>`
 inteiro e ajuste o título, as tecnologias (`<span class="tag-tech">`), a
 descrição e o link do repositório.
 
